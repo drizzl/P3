@@ -12,29 +12,33 @@ Use it to add specific things that *this* View needs in the head,
 such as a page specific stylesheets.
 --}}
 @section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/p3.css" type='text/css' rel='stylesheet'>
 @stop
 
 @section('img')
     <img
-            src='http:\\p3.danrunt.me\resources\images\loremipsum.jpg'
+            src='http://stephboreldesign.com/wp-content/uploads/2012/03/lorem-ipsum-logo.jpg'
             style='width:300px'
             alt='Lorem Ipsum Page'>
 @stop
 
 @section('content')
-    How long should the text be?
-    <form method='POST' action='/lorem-ipsum'>
-        {{csrf_field()}}
-        <input maxlength="2" name="paragraphs" type="text" value="3" id="paragraphs"> (Max: 99)
-        <select name="text_type" id="text_type">
-            <option value="words">Words</option>
-            <option value="sentences">Sentences</option>
-            <option value="paragraphs">Paragraphs</option>
-        </select>
-        <br>
-        <input type="submit" value="Ipsum!">
-    </form>
+    <p>
+        How long should the text be?
+        <form method='POST' action='/lorem-ipsum'>
+            {{csrf_field()}}
+            <input maxlength="2" name="paragraphs" type="text" value="3" id="paragraphs"> (Max: 99)
+            <select name="text_type" id="text_type">
+                <option value="words">Words</option>
+                <option value="sentences">Sentences</option>
+                <option value="paragraphs">Paragraphs</option>
+            </select>
+            <br>
+            <input type="submit" value="Ipsum!">
+        </form>
+    </p>
 
     {!! $text !!}
 @stop

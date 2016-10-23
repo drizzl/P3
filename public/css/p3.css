@@ -1,0 +1,14 @@
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 2cm;
+    padding-right: 2cm;
+}
+
+img {
+    padding-left: 2cm;
+}
+
+form {
+    padding-left: 2cm;
+}

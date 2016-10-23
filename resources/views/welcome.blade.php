@@ -7,8 +7,7 @@
         <title>Dan's Project 3 Splash page</title>
 
         <!-- Fonts -->
-        <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
-
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <div class='container'>
         <h1>Dan's Project 3 Splash Page</h1>

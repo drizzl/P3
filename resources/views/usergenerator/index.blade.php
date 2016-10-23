@@ -25,17 +25,12 @@ such as a page specific stylesheets.
 
 @section('content')
     <p>
-        How long should the text be?
-        <form method='POST' action='/lorem-ipsum'>
+        How many users should we generate?
+        <form method='POST' action='/user-generator'>
             {{csrf_field()}}
-            <input maxlength="2" name="paragraphs" type="text" value="3" id="paragraphs"> (Max: 99)
-            <select name="text_type" id="text_type">
-                <option value="words">Words</option>
-                <option value="sentences">Sentences</option>
-                <option value="paragraphs">Paragraphs</option>
-            </select>
+            Users: <input maxlength="2" name="users" type="text" value="3" id="users"> (Max 99)
             <br>
-            <input type="submit" value="Ipsum!">
+            <input type="submit" value="Generate!">
         </form>
     </p>
 @stop

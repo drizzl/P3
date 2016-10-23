@@ -12,6 +12,7 @@ Use it to add specific things that *this* View needs in the head,
 such as a page specific stylesheets.
 --}}
 @section('head')
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/p3.css" type='text/css' rel='stylesheet'>
 @stop
@@ -25,10 +26,10 @@ such as a page specific stylesheets.
 
 @section('content')
     <p>
-        How long should the text be?
-        <form method='POST' action='/lorem-ipsum'>
+        How many users should we generate?
+        <form method='POST' action='/user-generator'>
             {{csrf_field()}}
-            <input maxlength="2" name="paragraphs" type="text" value="3" id="paragraphs"> (Max: 99)
+            <input maxlength="2" name="users" type="text" value="3" id="users"> (Max: 99)
             <select name="text_type" id="text_type">
                 <option value="words">Words</option>
                 <option value="sentences">Sentences</option>
@@ -38,6 +39,8 @@ such as a page specific stylesheets.
             <input type="submit" value="Ipsum!">
         </form>
     </p>
+
+    {!! $text !!}
 @stop
 
 

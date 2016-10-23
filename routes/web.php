@@ -20,3 +20,4 @@ Route::post('/lorem-ipsum', 'LoremIpsumController@show')->name('loremipsum.show'
 
 
 Route::get('/user-generator', 'UserGeneratorController@index')->name('usergenerator.index');
+Route::post('/user-generator', 'UserGeneratorController@show')->name('usergenerator.show');
