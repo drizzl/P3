@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lorem-ipsum', 'LoremIpsumController@index')->name('li.index');
+
+
+Route::get('/user-generator', 'UserGeneratorController@index')->name('ug.index');
