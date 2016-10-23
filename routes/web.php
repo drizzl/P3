@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lorem-ipsum', 'LoremIpsumController@index')->name('li.index');
+Route::get('/lorem-ipsum', 'LoremIpsumController@index')->name('loremipsum.index');
+Route::post('/lorem-ipsum', 'LoremIpsumController@show')->name('loremipsum.show');
 
 
-Route::get('/user-generator', 'UserGeneratorController@index')->name('ug.index');
+Route::get('/user-generator', 'UserGeneratorController@index')->name('usergenerator.index');
