@@ -24,11 +24,20 @@ such as a page specific stylesheets.
 @stop
 
 @section('content')
+    @if(count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
     <p>
         How long should the text be?
         <form method='POST' action='/lorem-ipsum'>
             {{csrf_field()}}
-            <input maxlength="2" name="paragraphs" type="text" id="paragraphs"> (Max: 99)
+{{--  removed to allow validation
+           <input maxlength="2" name="paragraphs" type="text" id="paragraphs"> (Max: 99)--}}
+            <input name="size" type="text" id="size"> (Max: 99)
             <select name="text_type" id="text_type">
                 <option value="words">Words</option>
                 <option value="sentences">Sentences</option>

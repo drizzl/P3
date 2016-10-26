@@ -18,18 +18,23 @@ class LoremIpsumController extends Controller
         return view('loremipsum.index');
     }
 
-    public function show()
+    public function show(Request $request)
     {
+        $this->validate($request, ['size' => 'required|integer|min:1|max:99']);
+
+        $text_type = $request->input('text_type');
+        $size = $request->input('size');
+
         $lipsum = new LoremIpsum();
-        switch ($_POST['text_type']) {
+        switch ($text_type) {
             case 'words':
-                $text = $lipsum->words($_POST['paragraphs'], 'p');
+                $text = $lipsum->words($size, 'p');
                 break;
             case 'sentences':
-                $text = $lipsum->sentences($_POST['paragraphs'], 'p');
+                $text = $lipsum->sentences($size, 'p');
                 break;
             case 'paragraphs':
-                $text = $lipsum->paragraphs($_POST['paragraphs'], 'p');
+                $text = $lipsum->paragraphs($size, 'p');
                 break;
         }
 

@@ -25,11 +25,18 @@ such as a page specific stylesheets.
 @stop
 
 @section('content')
+    @if(count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
     <p>
         How many users should we generate?
         <form method='POST' action='/user-generator'>
             {{csrf_field()}}
-            Users: <input maxlength="2" name="users" type="text" id="users"> (Max 99)<br>
+            Names: <input name="names" type="text" id="names"> (Max 99)<br>
             Alliterative names: <input type="checkbox" name="allit" id="allit"><br>
             Computer Environment: <input type="checkbox" name="environment" id="environment"><br>
             <input type="submit" value="Generate!">

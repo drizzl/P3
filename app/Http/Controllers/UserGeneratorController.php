@@ -22,19 +22,24 @@ class UserGeneratorController extends Controller
     /**
      * @return $this
      */
-    public function show()
+    public function show(Request $request)
     {
+        $this->validate($request, ['names' => 'required|integer|min:1|max:99']);
+
+        $allit = $request->input('allit');
+        $environment = $request->input('environment');
+        $users = $request->input('names');
         $text = '';
 
-        if (isset($_POST['allit']))
+        if ($allit)
             $generator = new \Nubs\RandomNameGenerator\Alliteration();
         else
             $generator = new \Nubs\RandomNameGenerator\Vgng();
 
-        for ($i=0; $i<$_POST['users']; $i++) {
+        for ($i=0; $i<$users; $i++) {
             $text .= '<p>';
             $text .= $generator->getName() . '<br>';
-            if (isset($_POST['environment'])) {
+            if ($environment) {
                 $text .= \Campo\UserAgent::random() . '<br>';
             }
             $text .= '</p>';
