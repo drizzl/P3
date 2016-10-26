@@ -29,7 +29,7 @@ such as a page specific stylesheets.
         How long should the text be?
         <form method='POST' action='/lorem-ipsum'>
             {{csrf_field()}}
-            <input maxlength="2" name="paragraphs" type="text" value="3" id="paragraphs"> (Max: 99)
+            <input maxlength="2" name="paragraphs" type="text" id="paragraphs"> (Max: 99)
             <select name="text_type" id="text_type">
                 <option value="words">Words</option>
                 <option value="sentences">Sentences</option>

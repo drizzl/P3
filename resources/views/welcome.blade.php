@@ -26,8 +26,8 @@
 
         <br>
 
-        <h2>Random User Generator</h2>
-        <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
+        <h2>Video Game Character Generator</h2>
+        <p>Create random user data for your applications. Like Lorem Ipsum, but for Video Game characters!.</p>
 
         <a href='/user-generator'>Generate some users...</a>
 

@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-debugbar": "^2.3",
         "joshtronic/php-loremipsum": "^1.0",
-        "randomuser/generator": "dev-master"
+        "nubs/random-name-generator": "^2.0",
+        "campo/random-user-agent": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

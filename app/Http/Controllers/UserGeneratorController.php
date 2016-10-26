@@ -7,9 +7,9 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 */
+use Campo\UserAgent;
 use Illuminate\Http\Request;
 use P3\Http\Requests;
-use RandomUser;
 
 
 class UserGeneratorController extends Controller
@@ -24,12 +24,19 @@ class UserGeneratorController extends Controller
      */
     public function show()
     {
-        $gen = new \RandomUser\Generator();
-        $user = $gen->getUser();
+        $text = '';
 
-        for ($i=0;$i<$_POST['users]'];$i++) {
-            $text = '<p>';
-            $text .= $user->getName();
+        if (isset($_POST['allit']))
+            $generator = new \Nubs\RandomNameGenerator\Alliteration();
+        else
+            $generator = new \Nubs\RandomNameGenerator\Vgng();
+
+        for ($i=0; $i<$_POST['users']; $i++) {
+            $text .= '<p>';
+            $text .= $generator->getName() . '<br>';
+            if (isset($_POST['environment'])) {
+                $text .= \Campo\UserAgent::random() . '<br>';
+            }
             $text .= '</p>';
         }
 
