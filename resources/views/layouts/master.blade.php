@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
     <title>
         {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
         @yield('title','P3')
@@ -14,7 +13,6 @@
     {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
     @yield('head')
 
-</head>
 <body>
 
 <header>
